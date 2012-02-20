@@ -292,10 +292,10 @@ implements java.io.Serializable
      */
     public int[] getTags() {
         int[] tags = new int[fieldIndex.size()];
-        Iterator enum = fieldIndex.keySet().iterator();
+        Iterator fields = fieldIndex.keySet().iterator();
         int i = 0;
-        while (enum.hasNext()) {
-            tags[i++] = ((Integer)enum.next()).intValue();
+        while (fields.hasNext()) {
+            tags[i++] = ((Integer)fields.next()).intValue();
         }
         return tags;
     }
@@ -306,10 +306,10 @@ implements java.io.Serializable
      */
     public XTIFFField[] getFields() {
         XTIFFField[] fields = new XTIFFField[fieldIndex.size()];
-        Iterator enum = fieldIndex.values().iterator();
+        Iterator tags = fieldIndex.values().iterator();
         int i = 0;
-        while (enum.hasNext()) {
-            fields[i++] = (XTIFFField)enum.next();
+        while (tags.hasNext()) {
+            fields[i++] = (XTIFFField)tags.next();
         }
         return fields;
     }
