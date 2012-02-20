@@ -40,6 +40,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import org.jdom.output.Format;
 public class Java2XML extends XMLBinder {
     public Java2XML() {
     }
@@ -74,8 +75,9 @@ public class Java2XML extends XMLBinder {
         write(object, document.getRootElement(),
                 specElements(object.getClass()));
         XMLOutputter xmlOutputter = new XMLOutputter();
-        xmlOutputter.setNewlines(true);
-        xmlOutputter.setIndent(true);
+        Format xmlFormat = xmlOutputter.getFormat();
+        xmlFormat.setLineSeparator("\n");
+        xmlFormat.setIndent("  ");
         xmlOutputter.output(document, writer);
     }
     private void write(final Object object, final Element tag, List specElements)
