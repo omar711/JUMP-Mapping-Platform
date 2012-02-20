@@ -1,7 +1,6 @@
 package com.vividsolutions.jump.workbench.ui.plugin.imagery;
 
 import com.vividsolutions.jump.workbench.imagery.ReferencedImageFactory;
-import com.vividsolutions.jump.workbench.imagery.ecw.ECWImageFactory;
 import com.vividsolutions.jump.workbench.imagery.geotiff.GeoTIFFImageFactory;
 import com.vividsolutions.jump.workbench.imagery.graphic.GraphicImageFactory;
 import com.vividsolutions.jump.workbench.imagery.mrsid.MrSIDImageFactory;
@@ -17,9 +16,6 @@ public class InstallReferencedImageFactoriesPlugin extends AbstractPlugIn {
         registry.createEntry(
                         ReferencedImageFactory.REGISTRY_CLASSIFICATION,
                         new GraphicImageFactory());
-        registry.createEntry(
-                        ReferencedImageFactory.REGISTRY_CLASSIFICATION,
-                        new ECWImageFactory());
         registry.createEntry(
                         ReferencedImageFactory.REGISTRY_CLASSIFICATION,
                         new GeoTIFFImageFactory());
